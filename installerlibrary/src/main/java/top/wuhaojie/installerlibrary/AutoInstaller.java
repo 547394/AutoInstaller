@@ -98,7 +98,7 @@ public class AutoInstaller extends Handler {
             process = Runtime.getRuntime().exec("su");
             outputStream = process.getOutputStream();
 
-            String command = "pm install -r " + filePath + "\n";
+            String command = "pm install -r -d " + filePath + "\n";
             outputStream.write(command.getBytes());
             outputStream.flush();
             outputStream.write("exit\n".getBytes());
